@@ -21,10 +21,17 @@ module.exports = function (grunt) {
                 },
                 src: ['**/*.js']
             }
+        },
+        watch: {
+            test: {
+                files: ['index.js', 'lib/**/*.js'],
+                tasks: ['default']
+            }
         }
     });
 
     grunt.loadNpmTasks('grunt-jasmine-node-coverage');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     grunt.registerTask('default', 'jasmine_node');
 };
