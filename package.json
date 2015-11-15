@@ -1,0 +1,16 @@
+{
+  "name": "scientific-statistics",
+  "version": "0.1.0",
+  "description": "Package with simple functions for descriptive statistics like mean, median, variance. Based on https://github.com/FGRibreau/descriptive_statistics.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test/test.js"
+  },
+  "keywords": [
+    "descriptive",
+    "statistics",
+    "science"
+  ],
+  "author": "Orodret",
+  "license": "ISC"
+}
