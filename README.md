@@ -6,6 +6,13 @@ Overview
 
  This module has several simple easy-to-use functions for descriptive statistics like mean, median, variance. Intended to be used in NodeJS. Based on https://github.com/FGRibreau/descriptive_statistics, but unlike it does not mix anything in the existing prototypes.
 
+Installation
+------------
+
+```
+> npm i scientific-statistics
+```
+
 Examples
 --------
 
