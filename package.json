@@ -1,6 +1,6 @@
 {
   "name": "scientific-statistics",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Descriptive statistics for NodeJS",
   "main": "index.js",
   "homepage": "https://github.com/orodret/sci-statistics",
@@ -27,7 +27,7 @@
   "engines": {
     "node": "*"
   },
-  "readme": "Scientific statistics\n=====================\nOverview\n--------\n This module has several simple easy-to-use functions for descriptive statistics like mean, median, variance. Intended to be used in NodeJS. Based on https://github.com/FGRibreau/descriptive_statistics, but unlike it does not mix anything in the existing prototypes.\nExamples\n--------\n```\n > var ds = require('scientific-statistics');\n undefined\n > var data = [2,4,2,54,25,32,5,23,12,43];\n undefined\n > ds.number(data);\n 10\n > ds.sum(data);\n 202\n > ds.mean(data);\n 20.2\n > ds.median(data);\n 17.5\n > ds.variance(data);\n 339.51111111111106\n > ds.standardDeviation(data);\n 18.425827284306965\n > ds.percentile(data, 20);\n 3.6\n```",
+  "readme": "Scientific statistics\n=====================\nOverview\n--------\n This module has several simple easy-to-use functions for descriptive statistics like mean, median, variance. Intended to be used in NodeJS. Based on https://github.com/FGRibreau/descriptive_statistics, but unlike it does not mix anything in the existing prototypes.\n\nInstallation\n------------\n\n```\n > npm i scientific-statistics\n```\n\nExamples\n--------\n\n```\n > var ds = require('scientific-statistics');\n undefined\n > var data = [2,4,2,54,25,32,5,23,12,43];\n undefined\n > ds.number(data);\n 10\n > ds.sum(data);\n 202\n > ds.mean(data);\n 20.2\n > ds.median(data);\n 17.5\n > ds.variance(data);\n 339.51111111111106\n > ds.standardDeviation(data);\n 18.425827284306965\n > ds.percentile(data, 20);\n 3.6\n```",
   "_npmUser": {
     "name": "orodret",
     "email": "orodret15@gmail.com"
