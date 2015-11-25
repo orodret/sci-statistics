@@ -69,4 +69,47 @@ describe('Histogram', function(){
             expect(addbadarray).toThrow();
         });
     });
+
+    describe('Histogramm.getValues', function(){
+        it('should return array of the right length', function(){
+            hist.addRange([1,4,6,2,4,2,5,6,7,8]);
+            var values = hist.getValues();
+
+            expect(values instanceof Array).toBeTruthy();
+            expect(values.length).toEqual(7);
+        });
+
+        it('should contain right values', function(){
+            hist.addRange([2,3,5,2,1]);
+            var values = hist.getValues();
+
+            expect(values).toContain(2);
+            expect(values).toContain(3);
+            expect(values).toContain(5);
+            expect(values).toContain(1);
+        });
+    });
+
+    describe('Histogramm.map', function(){
+        it('should pass right objects', function(){
+            hist.addRange([1,3,3]);
+            var map = hist.map(function(v){ return v; });
+            expect(map.length).toEqual(2);
+            expect(map[0].value).toEqual(1);
+            expect(map[0].count).toEqual(1);
+            expect(map[1].value).toEqual(3);
+            expect(map[1].count).toEqual(2);
+        });
+
+        it('should transform values', function(){
+            hist.addRange([1,1,2,4,2,1,5]);
+            var map = hist.map(function(v){ return v.count; });
+
+            expect(map.length).toEqual(4);
+            expect(map).toContain(1);
+            expect(map).toContain(2);
+            expect(map).toContain(3);
+            expect(map.filter(function(i){return i == 1;}).length).toEqual(2);
+        })
+    })
 });
