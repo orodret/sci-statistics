@@ -181,4 +181,29 @@ describe('Histogram', function(){
             expect(sum).toEqual(res);
         });
     });
+
+
+    describe('Histogramm.length', function(){
+        it('should return number of values', function(){
+            var init = [1,2,4,2,1,4,3,2,5,2,5,3,2];
+
+            expect(hist.length).toEqual(0);
+            hist.addRange(init);
+
+            expect(hist.length).toEqual(5);
+        });
+    });
+
+
+
+    describe('Histogramm.count', function(){
+        it('should return number of values', function(){
+            var init = [1,2,4,2,1,4,3,2,5,2,5,3,2];
+
+            expect(hist.count).toEqual(0);
+            hist.addRange(init);
+
+            expect(hist.count).toEqual(init.length);
+        })
+    })
 });
