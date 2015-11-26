@@ -110,6 +110,43 @@ describe('Histogram', function(){
             expect(map).toContain(2);
             expect(map).toContain(3);
             expect(map.filter(function(i){return i == 1;}).length).toEqual(2);
+        });
+
+        it('should fail with no callback', function(){
+            expect(function(){ hist.map(); }).toThrow();
+            expect(function(){ hist.map({}); }).toThrow();
         })
-    })
+    });
+
+    describe('Histogramm.reduce', function(){
+        it('should calculate right reduction', function(){
+            var init = [1,1,2,4,2,2,4];
+            hist.addRange(init);
+            var counts = hist.reduce(function(prev, next){ return prev.push(next.count); }, []);
+
+            expect(counts.length).toEqual(init.length);
+            expect(counts).toContain(2);
+            expect(counts).toContain(3);
+            expect(counts).not.toContain(1);
+        });
+
+        it('should use 0 as default initValue', function(){
+            var init = [1,1,2,4,2,2,4];
+            hist.addRange(init);
+            var len = 0;
+            var lenfunc = function(){
+                len = hist.reduce(function(prev, next){ return prev + next.count; });
+            };
+
+            expect(lenfunc).not.toThrow();
+            expect(len).toEqual(init.length);
+        });
+
+        it('should fail with no callback', function(){
+            var init = [1,1,2,4,2,2,4];
+            hist.addRange(init);
+            expect(function(){hist.reduce();}).toThrow();
+            expect(function(){hist.reduce({});}).toThrow();
+        });
+    });
 });
