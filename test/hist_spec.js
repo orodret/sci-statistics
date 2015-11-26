@@ -173,12 +173,12 @@ describe('Histogram', function(){
 
     describe('Histogramm.sum', function(){
         it('should return the sum', function(){
-            var init = [1,2,4,2,1,4,3,2,5,2,5,3,2,1];
+            var init = [1,2,4,2,1,1,4,3,2,5,2,5,3,2,1];
             hist.addRange(init);
             var sum = hist.sum();
             var res = init.reduce(function(prev, next){return prev + next;}, 0);
 
             expect(sum).toEqual(res);
-        })
-    })
+        });
+    });
 });
