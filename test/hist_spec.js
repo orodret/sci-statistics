@@ -122,9 +122,9 @@ describe('Histogram', function(){
         it('should calculate right reduction', function(){
             var init = [1,1,2,4,2,2,4];
             hist.addRange(init);
-            var counts = hist.reduce(function(prev, next){ return prev.push(next.count); }, []);
+            var counts = hist.reduce(function(prev, next){ prev.push(next.count); return prev; }, []);
 
-            expect(counts.length).toEqual(init.length);
+            expect(counts.length).toEqual(3);
             expect(counts).toContain(2);
             expect(counts).toContain(3);
             expect(counts).not.toContain(1);
