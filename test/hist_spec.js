@@ -88,6 +88,13 @@ describe('Histogram', function(){
             expect(values).toContain(5);
             expect(values).toContain(1);
         });
+
+        it('should work for empty histogram', function(){
+            var values = hist.getValues();
+
+            expect(values instanceof Array).toBeTruthy();
+            expect(values.length).toEqual(0);
+        });
     });
 
     describe('Histogramm.map', function(){
@@ -115,7 +122,14 @@ describe('Histogram', function(){
         it('should fail with no callback', function(){
             expect(function(){ hist.map(); }).toThrow();
             expect(function(){ hist.map({}); }).toThrow();
-        })
+        });
+
+        it('should work for empty histogram', function(){
+            var empty = hist.map(function(v){ return v; });
+
+            expect(empty instanceof Array).toBeTruthy();
+            expect(empty.length).toEqual(0);
+        });
     });
 
     describe('Histogramm.reduce', function(){
@@ -147,6 +161,13 @@ describe('Histogram', function(){
             hist.addRange(init);
             expect(function(){hist.reduce();}).toThrow();
             expect(function(){hist.reduce({});}).toThrow();
+        });
+
+        it('should work for empty histogram', function(){
+            var empty = hist.reduce(function(prev, next){ return prev + next.count; });
+
+            expect(typeof empty).toEqual('number');
+            expect(empty).toEqual(0);
         });
     });
 });
