@@ -36,3 +36,8 @@ undefined
 > ds.percentile(data, 20);
 3.6
 ```
+
+Class Histogramm
+----------------
+
+Class which store values in structure like value:count. Can be useful with long lists of repetitive values.
