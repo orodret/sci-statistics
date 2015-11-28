@@ -5,5 +5,6 @@ module.exports = {
     percentile: require('./lib/percentile.js'),
     standardDeviation: require('./lib/standarddeviation.js'),
     sum: require('./lib/sum.js'),
-    variance: require('./lib/variance.js')
+    variance: require('./lib/variance.js'),
+    Histogram: require('./lib/histogram.js')
 };
