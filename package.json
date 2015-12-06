@@ -1,6 +1,6 @@
 {
   "name": "scientific-statistics",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "Descriptive statistics for NodeJS",
   "main": "index.js",
   "homepage": "https://github.com/orodret/sci-statistics",
